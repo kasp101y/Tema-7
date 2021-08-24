@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Title</h1>
+    </header>
+    <main>
+      <h2>Undertitel</h2>
+      <section>
+        <article>
+          <img
+            src="../img/channel_orange-20896811-frntl.jpg"
+            alt="Channel Orange"
+          />
+          <h3>Article 1</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
+            illo laudantium similique perferendis quaerat molestias architecto
+            ipsum quibusdam error aspernatur iusto ipsa deserunt voluptatem
+            tenetur sit labore, reiciendis non eos!
+          </p>
+        </article>
+        <article>
+          <img src="../img/images.jpeg" alt="Blonde" />
+          <h3>Article 2</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
+            illo laudantium similique perferendis quaerat molestias architecto
+            ipsum quibusdam error aspernatur iusto ipsa deserunt voluptatem
+            tenetur sit labore, reiciendis non eos!
+          </p>
+        </article>
+      </section>
+    </main>
+    <footer>This is the footer</footer>
+
+    <script>
+      const title = document.querySelector("header h1");
+      const article1Heading = document.querySelector("article:nth-child(1) h3");
+      const article1Content = document.querySelector("article:nth-child(1) p");
+      const article2Heading = document.querySelector("article:nth-child(2) h3");
+      const article2Content = document.querySelector("article:nth-child(2) p");
+      const article1Img = document.querySelector("article:nth-child(1) img");
+      const article2Img = document.querySelector("article:nth-child(2) img");
+
+      title.textContent = "Ny title";
+      article1Heading.innerHTML = "<h3>Ny Article 2<h3>";
+      article1Content.innerHTML = "<p>NY NY NY<p>";
+      article2Heading.innerHTML = "<h2>Ny article 2<h2>";
+      article2Content.innerHTML = "<p>NY NY NY<p>";
+      article1Img.src = "../img/images.jpeg";
+      article2Img.src = "../img/channel_orange-20896811-frntl.jpg";
+      console.log(article1Heading);
+      console.log(article1Content);
+      console.log(article1Img);
+    </script>
+  </body>
+</html>
