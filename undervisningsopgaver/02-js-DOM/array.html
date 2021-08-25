@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="" />
+  </head>
+
+  <body>
+    <h1>playliste</h1>
+    <ul id="display"></ul>
+
+    <script>
+      const playliste = [
+        "Jesublod",
+        "Tilbage",
+        "These Walls",
+        "Will he",
+        "Sweet Life",
+        "Hive",
+        "She",
+        "XO Tour life",
+        "Bleach",
+        "Fear",
+      ];
+
+      playliste.forEach(
+        (nummer) => (display.innerHTML += "<li>" + nummer + "</li>")
+      );
+    </script>
+  </body>
+</html>
