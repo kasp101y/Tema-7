@@ -1,0 +1,38 @@
+[
+  {
+    "navn": " Frø",
+    "type": " Amfibie",
+    "billede": "http://mabe-kea.dk/E19/pics/frog.png",
+    "levested": " Vandhullet",
+    "evner": ["Hoppe", "Svømme", "Holde vejret"]
+  },
+
+  {
+    "navn": " Gris",
+    "type": " Pattedyr",
+    "billede": "http://mabe-kea.dk/E19/pics/pig.png",
+    "levested": " Svinefarm",
+    "evner": ["Kød", "Prutte", "Sød"]
+  },
+  {
+    "navn": " Ræv",
+    "type": " Pattedyr",
+    "billede": "http://mabe-kea.dk/E19/pics/fox.png",
+    "levested": " Skoven",
+    "evner": ["Fantastisk", "Jæger", "Flot farve"]
+  },
+  {
+    "navn": " Sild",
+    "type": " Fisk",
+    "billede": "http://mabe-kea.dk/E19/pics/sild.jpg",
+    "levested": " Havet",
+    "evner": ["Svømme", "Gæller", "God smag"]
+  },
+  {
+    "navn": " Krokodille",
+    "type": " Krybdyr",
+    "billede": "http://mabe-kea.dk/E19/pics/kroko.jpg",
+    "levested": " Floden",
+    "evner": ["Dum", "Farlig", "Meget uhyggelig"]
+  }
+]

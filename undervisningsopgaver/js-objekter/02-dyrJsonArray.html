@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      article {
+        border: 3px solid black;
+        margin-bottom: 5vw;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section></section>
+    <template>
+      <article>
+        <h3></h3>
+        <img src="" alt="" />
+        <p>Type:</p>
+        <p id="levested">Levested:</p>
+        <p>Evner:</p>
+        <ul class="evneliste"></ul>
+      </article>
+    </template>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", start);
+
+      const fil = "DyrArray.json";
+
+      async function hentdata(fil) {
+        const resultat = await fetch(fil);
+        const json = await resultat.json();
+        start(json);
+      }
+
+      function start(json) {
+        const listevisning = document.querySelector("template");
+        const dyrTemplate = document.querySelector("section");
+
+        json.forEach((DyrArray) => {
+          let klon = listevisning.cloneNode(true).content;
+          klon.querySelector("h3").textContent = DyrArray.navn;
+          klon.querySelector("img").src = DyrArray.billede;
+          klon.querySelector("p").textContent = "Type:" + DyrArray.type;
+          klon.querySelector("#levested").textContent =
+            "Levested:" + DyrArray.levested;
+
+          DyrArray.evner.forEach((evne) => {
+            klon.querySelector(".evenliste").innerHTML +=
+              "<li>" + evne + "</li>";
+          });
+
+          dyrTemplate.appendChild(klon);
+        });
+      }
+
+      hentdata(fil);
+    </script>
+  </body>
+</html>

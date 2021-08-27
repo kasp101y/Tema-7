@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      article {
+        border: 3px solid black;
+        margin-bottom: 5vw;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section></section>
+    <template>
+      <article>
+        <h3></h3>
+        <img src="" alt="" />
+        <p>Type:</p>
+        <p id="levested">Levested:</p>
+      </article>
+    </template>
+
+    <script>
+      let dyr = [
+        {
+          navn: " Frø",
+          type: " Amfibie",
+          billede: "http://mabe-kea.dk/E19/pics/frog.png",
+          levested: " Vandhullet",
+        },
+        {
+          navn: " Gris",
+          type: " Pattedyr",
+          billede: "http://mabe-kea.dk/E19/pics/pig.png",
+          levested: " Svinefarm",
+        },
+        {
+          navn: " Ræv",
+          type: " Pattedyr",
+          billede: "http://mabe-kea.dk/E19/pics/fox.png",
+          levested: " Skoven",
+        },
+        {
+          navn: " sild",
+          type: " Fisk",
+          billede: "http://mabe-kea.dk/E19/pics/sild.jpg",
+          levested: " Havet",
+        },
+        {
+          navn: " Krokodille",
+          type: " Krybdyr",
+          billede: "http://mabe-kea.dk/E19/pics/kroko.jpg",
+          levested: " Floden",
+        },
+      ];
+
+      document.addEventListener("DOMContentLoaded", start);
+
+      function start() {
+        const listevisning = document.querySelector("template");
+        const dyrTemplate = document.querySelector("section");
+
+        dyr.forEach((dyr) => {
+          let klon = listevisning.cloneNode(true).content;
+          klon.querySelector("h3").textContent = dyr.navn;
+          klon.querySelector("img").src = dyr.billede;
+          klon.querySelector("p").textContent = "Type:" + dyr.type;
+          klon.querySelector("#levested").textContent =
+            "Levested:" + dyr.levested;
+          dyrTemplate.appendChild(klon);
+        });
+      }
+
+      console.log(dyr);
+    </script>
+  </body>
+</html>
