@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+
+      img,
+      video {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      main {
+        padding: 2vw;
+        margin: 2vw;
+      }
+      article {
+        border: 3px solid black;
+        margin-bottom: 5vw;
+      }
+
+      section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 5px;
+        width: 90vw;
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+
+      p {
+        margin: 2vw;
+      }
+
+      h2 {
+        margin: 2vw;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section></section>
+    <template>
+      <article>
+        <img src="" alt="" />
+        <h2></h2>
+        <p id="kort"></p>
+        <p id="pris"></p>
+      </article>
+    </template>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", hentdata);
+
+      const url = "https://babushka-dd8a.restdb.io/rest/menu";
+
+      const options = {
+        headers: {
+          "x-apikey": "600ec2fb1346a1524ff12de4",
+        },
+      };
+
+      async function hentdata() {
+        const resultat = await fetch(url, options);
+        const json = await resultat.json();
+        console.log(json);
+        vis(json);
+      }
+
+      function vis(json) {
+        const template = document.querySelector("template");
+        const section = document.querySelector("section");
+        const medieurl = "medium/";
+        const md = "-md.jpg";
+
+        json.forEach((ret) => {
+          let klon = template.cloneNode(true).content;
+          klon.querySelector("h2").textContent = ret.navn;
+          klon.querySelector("img").src = medieurl + ret.billednavn + md;
+          klon.querySelector("#kort").textContent = ret.kortbeskrivelse;
+          klon.querySelector("#pris").textContent = "Pris: " + ret.pris + ",-";
+
+          section.appendChild(klon);
+        });
+      }
+    </script>
+  </body>
+</html>
