@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+
+      img,
+      video {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      main {
+        padding: 2vw;
+        margin: 2vw;
+      }
+      article {
+        border: 3px solid black;
+        margin-bottom: 5vw;
+      }
+
+      p {
+        margin: 2vw;
+      }
+    </style>
+  </head>
+
+  <body>
+    <article>
+      <h2></h2>
+      <img src="" alt="" />
+      <p id="føds"></p>
+      <p id="hobby"></p>
+    </article>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const id = urlParams.get("id");
+      console.log(id);
+    </script>
+  </body>
+</html>
