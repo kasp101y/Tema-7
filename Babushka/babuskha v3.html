@@ -212,7 +212,7 @@
         popup.querySelector("h2").textContent = ret.navn;
         popup.querySelector(".lang").textContent = ret.langbeskrivelse;
         popup.querySelector(".pris").textContent = ret.pris;
-        popup.querySelector(".oprin").textContent = ret.pris;
+        popup.querySelector(".oprin").textContent = ret.oprindelsesregion;
         document
           .querySelector("#luk")
           .addEventListener("click", () => (popup.style.display = "none"));
